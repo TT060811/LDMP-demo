@@ -1,0 +1,38 @@
+spring:
+  application:
+    name: user-service
+  cloud:
+    nacos:
+      discovery:
+        server-addr: localhost:8848
+      config:
+        import-check:
+          enabled: false
+  # 数据库配置
+  datasource:
+    url: jdbc:mysql://localhost:3306/ldmp?useSSL=false&serverTimezone=UTC&allowPublicKeyRetrieval=true
+    username: root
+    password: 1234
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQL8Dialect
+  data:
+    redis:
+      host: localhost
+      port: 6379
+      database: 0
+      timeout: 2000ms
+
+jwt:
+  # 32字节的随机密钥（示例：可自行生成，如UUID去掉横线）
+  secret: 8e244e95dafada998e244e95dafada998e244e95dafada998e244e95dafada99
+  expire: 86400000
+  header: Authorization
+server:
+  port: 8086
