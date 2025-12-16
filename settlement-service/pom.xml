@@ -55,10 +55,13 @@
         </dependency>
 
         <!-- ========== Seata 分布式事务 ========== -->
+        <!-- 排除 Seata 依赖，学生项目不需要分布式事务 -->
+        <!--
         <dependency>
             <groupId>com.alibaba.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
         </dependency>
+        -->
 
         <!-- ========== 数据库 ========== -->
         <dependency>
