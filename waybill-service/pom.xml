@@ -5,7 +5,12 @@
          http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
     <modelVersion>4.0.0</modelVersion>
-
+    <properties>
+        <maven.compiler.source>17</maven.compiler.source>
+        <maven.compiler.target>17</maven.compiler.target>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <jjwt.version>0.11.5</jjwt.version>
+    </properties>
     <!-- 指定父模块 -->
     <parent>
         <groupId>com.logistics.platform</groupId>
@@ -15,8 +20,8 @@
     </parent>
 
     <!-- 子模块自己的坐标 -->
-    <artifactId>warehouse-service</artifactId>
-    <name>warehouse-service</name>
+    <artifactId>waybill-service</artifactId>
+    <name>waybill-service</name>
     <description>运单服务</description>
     <packaging>jar</packaging>
 
@@ -30,7 +35,10 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.12.0</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-security</artifactId>
+        </dependency>
         <!-- ========== Spring Boot Starter ========== -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -53,6 +61,24 @@
             <artifactId>spring-cloud-starter-openfeign</artifactId>
         </dependency>
 
+        <!-- JWT -->
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-api</artifactId>
+            <version>${jjwt.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-impl</artifactId>
+            <version>${jjwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.jsonwebtoken</groupId>
+            <artifactId>jjwt-jackson</artifactId>
+            <version>${jjwt.version}</version>
+            <scope>runtime</scope>
+        </dependency>
         <!-- ========== Spring Cloud Alibaba ========== -->
         <dependency>
             <groupId>com.alibaba.cloud</groupId>

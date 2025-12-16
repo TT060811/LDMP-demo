@@ -18,5 +18,9 @@ spring:
       ddl-auto: none
     show-sql: true
 
+
+amap:
+    key: 0e89cffc12bbbe4b169db8e6a215a9fe
+    direction-url: https://restapi.amap.com/v3/direction/driving
 server:
   port: 8085

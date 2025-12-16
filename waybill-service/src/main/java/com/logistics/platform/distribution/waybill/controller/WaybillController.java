@@ -15,7 +15,7 @@ import java.util.List;
 public class WaybillController {
     private final WaybillService waybillService;
     //创建运单
-    @PostMapping
+    @PostMapping("/add")
     public ResponseEntity<Waybill> createWaybill(@RequestBody Waybill waybill) {
         return ResponseEntity.ok(waybillService.createWaybill(waybill));
     }

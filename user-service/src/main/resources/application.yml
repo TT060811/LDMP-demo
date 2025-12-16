@@ -1,6 +1,6 @@
 spring:
   application:
-    name: waybill-service
+    name: user-service
   cloud:
     nacos:
       discovery:
@@ -29,13 +29,10 @@ spring:
       database: 0
       timeout: 2000ms
 
-
 jwt:
+  # 32字节的随机密钥（示例：可自行生成，如UUID去掉横线）
   secret: 8e244e95dafada998e244e95dafada998e244e95dafada998e244e95dafada99
   expire: 86400000
   header: Authorization
 server:
-  port: 8084
-  servlet:
-    context-path: /api
-
+  port: 8086

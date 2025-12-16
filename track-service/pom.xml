@@ -15,8 +15,8 @@
     </parent>
 
     <!-- 子模块自己的坐标 -->
-    <artifactId>warehouse-service</artifactId>
-    <name>warehouse-service</name>
+    <artifactId>track-service</artifactId>
+    <name>track-service</name>
     <description>轨迹服务</description>
     <packaging>jar</packaging>
 
@@ -66,13 +66,39 @@
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>5.8.22</version>
+        </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson2</artifactId>
+            <version>2.0.58</version>
+            <scope>system</scope>
+            <!-- 路径对应子模块内的lib文件夹 -->
+            <systemPath>${project.basedir}/lib/fastjson2-2.0.58.jar</systemPath>
+        </dependency>
 
         <!-- ========== Redis (可选，根据需求) ========== -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.83_noneautotype</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
+
+
 
     <build>
         <plugins>
